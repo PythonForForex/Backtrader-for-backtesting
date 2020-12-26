@@ -29,10 +29,11 @@ class MAcrossover(bt.Strategy):
 		self.order = None
 
 		# Instantiate moving averages
-		self.slow_sma = bt.indicators.MovingAverageSimple(self.datas[0], period=self.params.pslow)
 		self.fast_sma = bt.indicators.MovingAverageSimple(self.datas[0], period=self.params.pfast)
+		self.slow_sma = bt.indicators.MovingAverageSimple(self.datas[0], period=self.params.pslow)
+		
 		''' Using the built-in crossover indicator
-		self.crossover = bt.indicators.CrossOver(self.slow_sma, self.fast_sma)'''
+		self.crossover = bt.indicators.CrossOver(self.fast_sma, self.slow_sma)'''
 
 
 	def notify_order(self, order):
