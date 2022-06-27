@@ -12,7 +12,7 @@ class PrintClose(bt.Strategy):
 		print(f'{dt.isoformat()} {txt}') #Print date and close
 
 	def next(self):
-		self.log('Close: ', self.dataclose[0])
+		self.log(f'Close: {self.dataclose[0]}')
 
 class MAcrossover(bt.Strategy): 
 	# Moving average parameters
